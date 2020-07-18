@@ -1,7 +1,7 @@
 #include "Header.h"
 
 void printDescription(char name[], char description[], char example[]) {
-	
+
 	printColored(name, YELLOW);
 	printColored(description, LIGHT_BLUE);
 	printColored(example, BLUE);
