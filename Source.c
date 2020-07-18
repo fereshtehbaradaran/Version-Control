@@ -42,6 +42,14 @@ int init() {
 	fclose(listOfFiles);
 	_pclose(outPut);
 
+	sprintf(command, "copy \"C:\\Users\\fereshteh\\programs\\C\\version control\\diff_python\\applyChanges.py\" \"%s\\applyChanges.py\"", path);
+	outPut = _popen(command, "r");
+	_pclose(outPut);
+
+	sprintf(command, "copy \"C:\\Users\\fereshteh\\programs\\C\\version control\\diff_python\\findChanges.py\" \"%s\\findChanges.py\"", path);
+	outPut = _popen(command, "r");
+	_pclose(outPut);
+
 	return 0;
 }
 
@@ -133,6 +141,8 @@ int reset(int commitID) {
 	}
 
 	fclose(listOfFiles);
+
+
 
 }
 
@@ -374,7 +384,7 @@ void applyChanges(char fileName[], char newFileName[], int commitID) {
 
 	fclose(filesAdress);
 
-	sprintf(command, "python applyChanges.py <.versionControl\\address.txt");
+	sprintf(command, "python \".versionControl\\applyChanges.py\" <.versionControl\\address.txt");
 	system(command);
 
 	system("del \".versionControl\\address.txt\"");
@@ -422,7 +432,7 @@ void saveChanges(char fileName[], int commitID) {
 
 	fclose(filesAdress);
 
-	sprintf(command, "python findChanges.py <\".versionControl\\address.txt\"");
+	sprintf(command, "python \".versionControl\\findChanges.py\" <\".versionControl\\address.txt\"");
 	system(command);
 
 	system("del \".versionControl\\address.txt\"");
