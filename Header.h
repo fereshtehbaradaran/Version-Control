@@ -61,7 +61,11 @@ int printChangedItems();
 void changeConsoleColor(int colorCode);
 void printColored(char* content, int colorCode);
 
+void increaseNumberOfCommits(int* n);
+int getNumberOfCommits();
+
 #endif
+
 
 
 
